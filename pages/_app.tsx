@@ -71,12 +71,12 @@ const BundWsApp = (props: BundWsAppProps) => {
               variant="h6"
               noWrap
               component="div"
-              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+              sx={{ mr: 2, display: { xs: 'flex' } }}
             >
               bund.ws
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex' } }}>
               <Link href="/">
                 <Button
                   key="home-page"
