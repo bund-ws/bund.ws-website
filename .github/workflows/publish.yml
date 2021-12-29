@@ -16,6 +16,10 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install modules for build
         run: npm install
+      - name: Setup contact information
+        env:
+          WEBSITE_CONTACT: ${{ secrets.WEBSITE_CONTACT }}
+        run: echo "$WEBSITE_CONTACT" > contact.json
       - name: Build website
         run: npm run build
       - name: ZIP website to file

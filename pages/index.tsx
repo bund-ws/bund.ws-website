@@ -22,15 +22,26 @@
   SOFTWARE.
 *******************************************************************************/
 
-import styles from '../styles/Home.module.scss';
+// import styles from '../styles/Home.module.scss';
+import { Container } from '@mui/material';
 import type { NextPage } from 'next';
 
-const Home: NextPage = () => {
+const IndexPage: NextPage = () => {
   return (
-    <div className={styles.container}>
-      bund.ws
-    </div>
+    <Container maxWidth="sm">
+      <p>
+        Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.
+      </p>
+
+      <p>
+        Hi omnes lingua, institutis, legibus inter se differunt.
+      </p>
+
+      <p>
+        Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit.
+      </p>
+    </Container>
   );
 };
 
-export default Home;
+export default IndexPage;

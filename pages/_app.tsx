@@ -24,9 +24,95 @@
 
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ResponseAppBar from '../components/ResponsiveAppBar';
 
-const BundWsApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />;
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
+
+interface BundWsAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+import createCache from '@emotion/cache';
+import { red } from '@mui/material/colors';
+import { AppBar, Box, Button, CssBaseline, Toolbar, Typography } from '@mui/material';
+import Link from 'next/link';
+
+// prepend: true moves MUI styles to the top of the <head> so they're loaded first.
+// It allows developers to easily override MUI styles with other styling solutions, like CSS modules.
+function createEmotionCache() {
+  return createCache({ key: 'css', prepend: true });
+}
+
+// Create a theme instance.
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+const BundWsApp = (props: BundWsAppProps) => {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  const handleGithubClick = () => {
+    window.location.href = 'https://github.com/bund-ws';
+  };
+
+  return (
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+
+        <AppBar position="fixed">
+          <Toolbar>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            >
+              bund.ws
+            </Typography>
+
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Link href="/">
+                <Button
+                  key="home-page"
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Startseite
+                </Button>
+              </Link>
+
+              <Link href="/datenschutz">
+                <Button
+                  key="privacy-page"
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Datenschutzerklärung
+                </Button>
+              </Link>
+
+              <Link href="/impressum">
+                <Button
+                  key="imprint-page"
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  Impressum
+                </Button>
+              </Link>
+            </Box>
+
+            <Button color="inherit" onClick={handleGithubClick}>GitHub</Button>
+          </Toolbar>
+        </AppBar>
+        <Toolbar />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </CacheProvider>
+  );
 };
 
 export default BundWsApp;
