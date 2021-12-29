@@ -18,7 +18,7 @@ jobs:
         run: npm install
       - name: Build website
         run: npm run build
-      - name: ZIP website to ZIP file
+      - name: ZIP website to file
         run: zip -r ./website.zip ./package.json ./next.config.js ./.next ./public
       - name: Stop and cleanup service
         uses: appleboy/ssh-action@master
