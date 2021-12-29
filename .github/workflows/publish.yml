@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            systemctl stop bund_ws_website
+            sudo /bin/systemctl stop bund_ws_website
             rm -rf ~/apps/website
       - name: Upload ZIP file
         uses: appleboy/scp-action@master
@@ -50,4 +50,4 @@ jobs:
             cd ~/apps/website && unzip ./website.zip
             rm ~/apps/website/website.zip
             cd ~/apps/website && npm install
-            systemctl start bund_ws_website
+            sudo /bin/systemctl start bund_ws_website
