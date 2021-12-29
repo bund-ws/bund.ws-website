@@ -35,9 +35,9 @@ const DatenschutzPage: NextPage = () => {
 
       <h3>Grundlegendes</h3>
       <p>Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber</p>
-      <pre>{contact.name}<br />{contact.street}<br />{contact.zip_code} {contact.city}, {contact.country}<br /><a href={`mailto:${contact.email}`}>{contact.email}</a></pre>
+      <pre>{contact.name}<br />{contact.street}<br />{contact.zip_code} {contact.city}<br />{contact.country}</pre>
       <p>informieren.</p>
-      <p>Ich, der Websitebetreiber, nimmt Ihren Datenschutz sehr ernst und behandelt Ihre
+      <p>Ich, der Websitebetreiber, nehme Ihren Datenschutz sehr ernst und behandele Ihre
         personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Da
         durch neue Technologien und die ständige Weiterentwicklung dieser Website Änderungen
         an dieser Datenschutzerklärung vorgenommen werden können, empfehle ich Ihnen sich die
@@ -77,7 +77,7 @@ const DatenschutzPage: NextPage = () => {
       <p>Sofern Sie mit mir als Websitebetreiber durch die angebotenen Kontaktmöglichkeiten
         Verbindung aufnehmen, werden Ihre Angaben gespeichert, damit auf diese zur Bearbeitung und
         Beantwortung Ihrer Anfrage zurückgegriffen werden kann. Ohne Ihre Einwilligung werden
-        diese Daten nicht an Dritte weitergegeben und spätestens nach 30 Tagen gelöscht.</p>
+        diese Daten nicht an Dritte weitergegeben und spätestens nach 30 Tagen gelöscht, sofern dies gesetzlich möglich ist und keine Beweissicherung, wie bei Zugriffsdaten, erfolgt.</p>
 
       <h3>Kommentare, Beiträge und API-Zugriffe</h3>
       <p>Hinterlassen Sie auf dieser Website einen Beitrag, einen Kommentar oder greifen auf eine Programmierschnittstelle (API) zu, wird Ihre IP-Adresse
