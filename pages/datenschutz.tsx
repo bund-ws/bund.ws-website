@@ -81,7 +81,7 @@ const DatenschutzPage: NextPage = () => {
 
       <h3>Kommentare, Beiträge und API-Zugriffe</h3>
       <p>Hinterlassen Sie auf dieser Website einen Beitrag, einen Kommentar oder greifen auf eine Programmierschnittstelle (API) zu, wird Ihre IP-Adresse
-        gespeichert. Dies erfolgt aufgrund unserer berechtigten Interessen im Sinne des Art. 6 Abs.
+        gespeichert. Dies erfolgt aufgrund meines berechtigten Interesses im Sinne des Art. 6 Abs.
         1 lit. f. DSGVO und dient der Sicherheit von mir als Websitebetreiber: Denn sollte Ihr
         Kommentar / Beitrag / Zugriff gegen geltendes Recht verstoßen, kann ich dafür belangt werden, weshalb
         ich ein Interesse an der Identität der jeweilgen Person(en) habe.</p>
