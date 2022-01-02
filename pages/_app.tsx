@@ -26,7 +26,7 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ResponseAppBar from '../components/ResponsiveAppBar';
+import CookieConsent from "react-cookie-consent";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -110,6 +110,16 @@ const BundWsApp = (props: BundWsAppProps) => {
         </AppBar>
         <Toolbar />
         <Component {...pageProps} />
+
+        <CookieConsent style={{
+          background: "blue",
+          color: "white"
+        }} buttonText={"Verstanden!"}>
+          Diese Seite möglicherweise Cookies ein.{" "}
+          <Link href="/datenschutz">
+            <span style={{ color: 'yellow', cursor: 'pointer' }}>Hier geht es zur Datenschutzerklärung ...</span>
+          </Link>
+        </CookieConsent>
       </ThemeProvider>
     </CacheProvider>
   );
